@@ -1,0 +1,18 @@
+version: '3'
+services:
+ web:
+    build: .
+    container_name: Exampleapp
+    restart: always
+    ports:
+      - "5000:3001"
+    links:
+      - mongo
+    volumes:
+      - /home/juselero/Desktop/Nodejs/Nodejs:/usr/src/app
+
+ mongo:
+    container_name: mymongodatabase
+    image: mongo
+    ports:
+       - "27018:27017"
